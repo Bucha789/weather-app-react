@@ -11,13 +11,6 @@
 .search__container.active {
   left: 0;
 }
-.search__container > i {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  color: white;
-  font-size: 2rem;
-}
 .search__input {
   margin: 0 auto;
   display: flex;
