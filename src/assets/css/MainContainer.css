@@ -1,0 +1,86 @@
+.main-weather__container {
+  background-color: #1E213A;
+  height: 810px;
+}
+.main-weather__controls {
+  width: 100%;
+  padding: 18px 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-weather__controls button {
+  background-color:#6E707A;
+  color: #E7E7EB;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1.6rem; 
+}
+.main-weather__controls a {
+  position: relative;
+  background-color: #6E707A;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.main-weather__controls a i {
+  color: #E7E7EB;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+}
+.main-weather__state {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-weather__state .background {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: -111px;
+  width: 564px;
+  opacity: 5%;
+}
+.main-weather__state div img {
+  margin-top: 75px;
+  width: 150px;
+}
+.main-temperature__display h2 {
+  font-size: 14.4rem;
+  font-weight: 500;
+  color: #E7E7EB;
+  margin-bottom: 23px;
+}
+h2 span {
+  font-size: 5.6rem;
+  font-family: 'M PLUS 1p', sans-serif;
+  font-weight: 400;
+  color:#A09FB1;
+}
+.main-temperature__display > span {
+  color: #A09FB1;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  font-size: 3.6rem;
+  margin-bottom: 48px;
+}
+.main-temperature__display p {
+  font-size: 1.8rem;
+  color: #A09FB1;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.main-temperature__display p span {
+  margin: 0 16px;
+}
