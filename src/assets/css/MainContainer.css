@@ -1,6 +1,20 @@
 .main-weather__container {
+  position: relative;
   background-color: #1E213A;
   height: 810px;
+}
+.main-weather__container > i {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: white;
+  font-size: 2rem;
+  z-index: 11;
+  opacity: 0;
+  animation-name: fromIn;
+  animation-delay: .5s;
+  animation-fill-mode: forwards;
+  animation-duration: .5s;
 }
 .main-weather__controls {
   width: 100%;
@@ -83,4 +97,12 @@ h2 span {
 }
 .main-temperature__display p span {
   margin: 0 16px;
+}
+@keyframes fromIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
