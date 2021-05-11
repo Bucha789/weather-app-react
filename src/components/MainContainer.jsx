@@ -1,17 +1,19 @@
-import React,{useState} from "react";
-import MainWeatherLogo from '../assets/images/Cloud-background.png';
-import ShowerIcon from '../assets/images/Shower.png'
+import React, { useState } from "react";
+import MainWeatherLogo from "../assets/images/Cloud-background.png";
+import ShowerIcon from "../assets/images/Shower.png";
 
-import '../assets/css/MainContainer.css'
+import "../assets/css/MainContainer.css";
 import SearchPlaces from "./SearchPlaces";
+
 export default function MainContainer() {
-  const [isSearch, setSearch] = useState(false)
-  
-  
+  const [isSearch, setSearch] = useState(false);
+
   return (
     <div className="main-weather__container">
-      {isSearch && <i className="fas fa-times" onClick={() => setSearch(false)}></i>}
-      <SearchPlaces active={isSearch}/>
+      {isSearch && (
+        <i className="fas fa-times" onClick={() => setSearch(false)}></i>
+      )}
+      <SearchPlaces active={isSearch} />
       <div className="main-weather__controls">
         <button onClick={() => setSearch(true)}>Search for places</button>
         <a href="/">
