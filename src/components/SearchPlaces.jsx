@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../assets/css/SearchPlaces.css";
-export default function SearchPlaces({ active }) {
+export default function SearchPlaces({ active, handleData, setSearch }) {
   const [results, setResults] = useState([]);
   const inputSearch = useRef();
   const [value, setValue] = useState(null);
@@ -26,6 +26,7 @@ export default function SearchPlaces({ active }) {
   };
   return (
     <div className={active ? "search__container active" : "search__container"}>
+      <i className="fas fa-times" onClick={() => setSearch(false)}></i>
       <div className="search__input">
         <div className="input__container">
           <i className="fas fa-search"></i>
@@ -35,7 +36,7 @@ export default function SearchPlaces({ active }) {
       </div>
       <div className="search__results">
         {results.length > 0 ? results.map((item) => (
-          <div key={item.latitude} className="result__container">
+          <div key={item.latitude} onClick={() => handleData(item)} className="result__container">
             <h3>{item.locality}, {item.region}</h3>
             <p>&#62;</p>
           </div>

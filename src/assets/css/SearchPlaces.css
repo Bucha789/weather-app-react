@@ -78,3 +78,24 @@
   font-weight: 500;
   font-size: 1.6rem;
 }
+.search__container > i {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: white;
+  font-size: 2rem;
+  z-index: 11;
+  opacity: 0;
+  animation-name: fromIn;
+  animation-delay: .5s;
+  animation-fill-mode: forwards;
+  animation-duration: .5s;
+}
+@keyframes fromIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
