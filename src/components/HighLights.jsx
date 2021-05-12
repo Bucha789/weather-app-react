@@ -1,26 +1,28 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import '../assets/css/Hightlights.css';
 
 
-export default function HighLights() {
+export default function HighLights({mainWeatherData}) {
+    const progressLine = useRef();
+    progressLine.current.style.width = `${mainWeatherData.humidity}%`;
+  
   return (
-<div className="hightlights__container">
+  <div className="hightlights__container">
       <h2>Today's Hightlights</h2>
       <div className="hightlights-item__container">
-
         <div className="hightlights__item">
           <h3>Wind status</h3>
-          <p>7<span>mph</span></p>
+          <p>{parseInt(mainWeatherData.wind_speed)}<span>Km/h</span></p>
           <div className="wind-speed__container">
             <div className="wind-arrow">
               <i className="fas fa-location-arrow"></i>
             </div>
-            <span>WSW</span>
+            <span>{parseInt(mainWeatherData.wind_deg)}°</span>
           </div>
         </div>
         <div className="hightlights__item">
           <h3>Humidity</h3>
-          <p>84<span>%</span></p>
+          <p>{mainWeatherData.humidity}<span>%</span></p>
           <div className="progress-bar__container">
             <div className="checkpoints">
               <span>0</span>
@@ -28,18 +30,18 @@ export default function HighLights() {
               <span>100</span>
             </div>
             <div className="bar">
-              <div className="progress"></div>
+              <div ref={progressLine} className="progress"></div>
             </div>
             <span className="percent">%</span>
           </div>
         </div>
         <div className="hightlights__item">
           <h3>Visibility</h3>
-          <p>6,4 <span>miles</span></p>
+          <p>{mainWeatherData.visibility / 10} <span>Km</span></p>
         </div>
         <div className="hightlights__item">
           <h3>Air Pressure</h3>
-          <p>998 <span>mb</span></p>
+          <p>{mainWeatherData.pressure} <span>hPa</span></p>
         </div>
       </div>
       <span className="credits">create by Juandev01 - devChallenges.io</span>

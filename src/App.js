@@ -7,28 +7,28 @@ import WeatherStats from './components/WeatherStats';
 import getWeather from './services/getWeather'
 function App() {
   const [isSearch, setSearch] = useState(false);
+  const [place, setPlace] = useState('La chingada')
   const [data, setData] = useState({
-    main: {
-      temp: '',
-    },
-    name: '',
-    weather: {
-      main: '',
-    }
+    current: {},
+    daily: [],
   })
 
   const handleData = (item) => {
     setSearch(false);
-    console.log('hola estoy viendo como se conectan los componentes', item)
-    const city = item.name;
-    getWeather(city).then(res => setData(res))
+    setPlace(item.name);
+    // console.log('hoa estoy viendo como se conectan los componentes', item)
+    const latitude = item.latitude.toFixed(2)
+    const longitude = item.longitude.toFixed(2)
+    getWeather(latitude, longitude).then(res => {
+      console.log(res)
+      setData(res)})
   }
   return (
     <main>
       <SearchPlaces active={isSearch} handleData={handleData} setSearch={setSearch}/>
-      <MainContainer setSearch={setSearch} />
-      <WeatherStats />
-      <HighLights />
+      <MainContainer place={place} setSearch={setSearch} mainWeatherData={data.current}/>
+      <WeatherStats daylyStats={data.daily}/>
+      <HighLights mainWeatherData={data.current}/>
     </main>
   );
 }

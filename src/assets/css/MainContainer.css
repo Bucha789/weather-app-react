@@ -55,6 +55,11 @@
 .main-weather__state div img {
   margin-top: 75px;
   width: 150px;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 .main-temperature__display h2 {
   font-size: 14.4rem;
@@ -85,4 +90,12 @@ h2 span {
 }
 .main-temperature__display p span {
   margin: 0 16px;
+}
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
