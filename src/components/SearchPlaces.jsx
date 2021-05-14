@@ -3,12 +3,9 @@ import "../assets/css/SearchPlaces.css";
 export default function SearchPlaces({ active, handleData, setSearch }) {
   const [results, setResults] = useState([]);
   const inputSearch = useRef();
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState('Mexico');
 
   useEffect(() => {
-    if (value === null) {
-      return null;
-    }
     fetch(
       `http://api.positionstack.com/v1/forward?access_key=0085c19cdfc9b3f93ece07b3cb3fb2c1&query=${value}`
     )

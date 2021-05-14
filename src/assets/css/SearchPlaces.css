@@ -24,6 +24,8 @@
   height: 50px;
   border: 1px solid #E7E7EB;
   padding: 15px;
+  display: flex;
+  align-items: center;
 }
 .input__container > i {
   color: #616475;
