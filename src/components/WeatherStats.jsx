@@ -1,9 +1,6 @@
 import React from "react";
 import "../assets/css/WeatherStats.css";
-import lightCloudIcon from "../assets/images/LightCloud.png";
-import HeavyRainIcon from "../assets/images/HeavyRain.png";
-import lightThunderstormIcon from "../assets/images/LightThunderstom.png";
-import SnowRainIcon from "../assets/images/SnowRain.png";
+import ImageDisplay from "./ImageDisplay";
 
 export default function WeatherStats({ daylyStats }) {
   return (
@@ -11,39 +8,39 @@ export default function WeatherStats({ daylyStats }) {
       <div className="weather-stats__container">
         <div className="weather-stats__item">
           <h3>Tomorrow</h3>
-          <img src={lightThunderstormIcon} alt="nevar" />
+          <ImageDisplay state={daylyStats[0].weather[0].main}/>
           <div>
             <span>{parseInt(daylyStats[0].temp.min)}°C</span>
             <span>{parseInt(daylyStats[0].temp.max)}°C</span>
           </div>
         </div>
         <div className="weather-stats__item">
-          <h3>Sun, 7 Jun</h3>
-          <img src={lightThunderstormIcon} alt="nevar" />
+          <h3>Day 2</h3>
+          <ImageDisplay state={daylyStats[1].weather[0].main}/>
           <div>
             <span>{parseInt(daylyStats[1].temp.min)}°C</span>
             <span>{parseInt(daylyStats[1].temp.max)}°C</span>
           </div>
         </div>
         <div className="weather-stats__item">
-          <h3>Mon, 8 Jun</h3>
-          <img src={SnowRainIcon} alt="nevar" />
+          <h3>Day 3</h3>
+          <ImageDisplay state={daylyStats[2].weather[0].main}/>
           <div>
             <span>{parseInt(daylyStats[2].temp.min)}°C</span>
             <span>{parseInt(daylyStats[2].temp.max)}°C</span>
           </div>
         </div>
         <div className="weather-stats__item">
-          <h3>Tue, 9 Jun</h3>
-          <img src={lightCloudIcon} alt="nevar" />
+          <h3>Day 4</h3>
+          <ImageDisplay state={daylyStats[3].weather[0].main}/>
           <div>
             <span>{parseInt(daylyStats[3].temp.min)}°C</span>
             <span>{parseInt(daylyStats[3].temp.max)}°C</span>
           </div>
         </div>
         <div className="weather-stats__item">
-          <h3>Wed, 10 Jun</h3>
-          <img src={HeavyRainIcon} alt="nevar" />
+          <h3>Day 5</h3>
+          <ImageDisplay state={daylyStats[4].weather[0].main}/>
           <div>
             <span>{parseInt(daylyStats[4].temp.min)}°C</span>
             <span>{parseInt(daylyStats[4].temp.max)}°C</span>

@@ -1,10 +1,14 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import '../assets/css/Hightlights.css';
 
 
 export default function HighLights({mainWeatherData}) {
     const progressLine = useRef();
-    progressLine.current.style.width = `${mainWeatherData.humidity}%`;
+    const arrowWind = useRef();
+    useEffect(() => {
+      progressLine.current.style.width = `${mainWeatherData.humidity}%`;
+      arrowWind.current.style.transform = `translate(-50%, -50%) rotate(${-(mainWeatherData.wind_deg - 45)}deg)`
+    },[mainWeatherData])
   
   return (
   <div className="hightlights__container">
@@ -15,7 +19,7 @@ export default function HighLights({mainWeatherData}) {
           <p>{parseInt(mainWeatherData.wind_speed)}<span>Km/h</span></p>
           <div className="wind-speed__container">
             <div className="wind-arrow">
-              <i className="fas fa-location-arrow"></i>
+              <i ref={arrowWind} className="fas fa-location-arrow"></i>
             </div>
             <span>{parseInt(mainWeatherData.wind_deg)}°</span>
           </div>

@@ -3,7 +3,10 @@
   background-color: #1E213A;
   height: 810px;
 }
-
+h2 {
+  color: white;
+  text-align: center;
+}
 .main-weather__controls {
   width: 100%;
   padding: 18px 11px;
@@ -12,6 +15,7 @@
   align-items: center;
 }
 .main-weather__controls button {
+  cursor: pointer;
   background-color:#6E707A;
   color: #E7E7EB;
   font-family: 'Raleway', sans-serif;
@@ -20,7 +24,8 @@
   padding: 10px 18px;
   font-size: 1.6rem; 
 }
-.main-weather__controls a {
+.main-weather__controls span {
+  cursor: pointer;
   position: relative;
   background-color: #6E707A;
   display: inline-block;
@@ -28,7 +33,7 @@
   height: 40px;
   border-radius: 50%;
 }
-.main-weather__controls a i {
+.main-weather__controls span i {
   color: #E7E7EB;
   position: absolute;
   top: 50%;

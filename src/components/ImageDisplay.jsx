@@ -17,6 +17,9 @@ export default function ImageDisplay({ state }) {
     case 'Thunderstom':
       image = weatherImages.thunderstormIcon;
       break;
+    case 'Rain':
+      image = weatherImages.heavyRainIcon;
+      break;
     default: 
       image = weatherImages.hailIcon;
   }  
