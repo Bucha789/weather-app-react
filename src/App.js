@@ -7,7 +7,7 @@ import WeatherStats from "./components/WeatherStats";
 import getWeather from "./services/getWeather";
 function App() {
   const [isSearch, setSearch] = useState(false);
-  const [place, setPlace] = useState("La chingada");
+  const [place, setPlace] = useState("");
   const [data, setData] = useState({
     current: {},
     daily: [],
