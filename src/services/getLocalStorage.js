@@ -1,7 +1,15 @@
 export function getLocalPlace() {
-  const place = localStorage.getItem('place');
-  return place;
+  const lastPlace = localStorage.getItem('lastPlace');
+  if (lastPlace) {
+    return JSON.parse(lastPlace);
+  }
+  return "";
 }
-export function setLocalPlace(place) {
-  localStorage.setItem('place', place)
+export function setLocalPlace(latitude, longitude, name) {
+  const lastPlace = {
+    place: name,
+    latitude: latitude,
+    longitude: longitude,
+  }
+  localStorage.setItem('lastPlace', JSON.stringify(lastPlace))
 }
